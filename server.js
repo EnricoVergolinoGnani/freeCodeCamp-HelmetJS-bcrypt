@@ -14,10 +14,10 @@ const someOtherPlaintextPassword = 'pass123';
 
 bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
     /*Store hash in your db*/
-    console.log(hash);
+    console.log(hash + "<-- ASYNC HASH");
     bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
         /*res == true or false*/
-        console.log(res)
+        console.log(res + "<-- ASYNC RESULT")
     });
 });
 
@@ -26,9 +26,9 @@ bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
 //START_SYNC
 
 var hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
-console.log(hash)
+console.log(hash + "<-- SYNC HASH")
 var result = bcrypt.compareSync(myPlaintextPassword, hash);
-console.log(result)
+console.log(result + "<-- SYNC RESULT")
 
 //END_SYNC
 
