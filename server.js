@@ -29,8 +29,10 @@ bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
 
 //END_SYNC
 
-
-
+// Simple Hello World!
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
 
 
 
